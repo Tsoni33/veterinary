@@ -14,7 +14,7 @@ class AppointmentsController < ApplicationController
       reason_for_visit: params[:reason_for_visit]
     })
     
-    @result = "An appointment is created for the pet #{pet.name} at on #{appointment.date_of_visit}."
+    @result = "An appointment is created for the pet #{pet.name} on #{appointment.date_of_visit}."
   rescue => error
     logger.error("#{error.message}\n#{error.backtrace.join("\n")}")
     @result = error.message
