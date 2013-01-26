@@ -3,6 +3,10 @@ There is no client side validation. All validations happen on the server, mostly
 4 hours time is not enough for me to write both unit/functional tests and the full application.
 So I choose to write the fully-working application.
 
+There are 2 tests:  1 controller test and 1 model test using RSpec to show that I know how to write test :))
+Run the test from the command line:
+rspec spec
+
 
 PLEASE SEE THE URLS THAT IMPLEMENT THE STORIES BELOWS:
 
@@ -29,7 +33,7 @@ Requires Reminder of Appointment
 Reason for Visit - required
 
 http://localhost:3000/appointments/new
- 
+
 
 3. As one of the practicing veterinary doctors, I should be able to record the following information about a customer's pet.
 Name of Pet - required, no more than 35 characters
