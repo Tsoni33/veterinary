@@ -9,7 +9,7 @@ class CreateSeedData < ActiveRecord::Migration
     john_address = create_address('105 Aparahoe road', 'Englewood', 'CO', '80112')
     customer_john = create_customer('John Gray', john_address)
     
-    create_pet('Scott', Pet::DOG, 'Dorberman', 5, 190.98, 7.days.ago, customer_john)
+    create_pet('Scott', Pet::DOG, 'Doberman', 5, 190.98, 7.days.ago, customer_john)
   end
 
   def down

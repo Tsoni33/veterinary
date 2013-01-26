@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.8'
+gem 'rails', '3.2.11'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -29,10 +29,18 @@ gem 'jquery-rails'
 # gem 'jbuilder'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
 
 # Deploy with Capistrano
 # gem 'capistrano'
 
 # To use debugger
 # gem 'debugger'
+
+group :test do
+  gem 'rspec-rails' # run rails generate rspec:install
+  gem 'capybara'
+  gem 'cucumber-rails' # run rails generate cucumber:install
+  gem 'database_cleaner'
+  gem 'factory_girl_rails'
+end
