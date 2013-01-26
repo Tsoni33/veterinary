@@ -5,7 +5,7 @@ class AppointmentsController < ApplicationController
 
   def create
     pet = Pet.includes(:customer).where(id: params[:pet].to_i).first
-    
+
     appointment = Appointment.create_from_hash({
       date_of_visit: Date.parse(params[:date_of_visit]),
       pet: pet,
@@ -13,7 +13,7 @@ class AppointmentsController < ApplicationController
       reminder_required: (params[:reminder_required].to_s == 'on'),
       reason_for_visit: params[:reason_for_visit]
     })
-    
+
     @result = "An appointment is created for the pet #{pet.name} on #{appointment.date_of_visit}."
   rescue => error
     logger.error("#{error.message}\n#{error.backtrace.join("\n")}")
@@ -21,6 +21,6 @@ class AppointmentsController < ApplicationController
   end
 
   def show
-    @appointments = Appointment.includes(:pet).where('person_id = ? and date_of_visit > ?', params[:customer_id], Time.now)
+    @appointments = Appointment.includes(:pet).where('person_id = ? and date_of_visit > ?', params[:id], Time.now)
   end
 end
