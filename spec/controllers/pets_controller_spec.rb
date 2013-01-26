@@ -40,5 +40,3 @@ describe PetsController do
   end
   
 end
-
-# required_attributes = [:customer, :name, :pet_type, :breed, :age, :weight, :last_visit]
