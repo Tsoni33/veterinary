@@ -25,6 +25,6 @@ class PetsController < ApplicationController
   def validate_presence(params)
     required_attributes = [:customer, :name, :pet_type, :breed, :age, :weight, :last_visit]
     missing_attributes = params.select { |key,value| required_attributes.include?(key.to_sym) && value.blank?}.keys
-    raise "The following required attributes are missing: #{missing_attributes.join(',')}" if !missing_attributes.empty?
+    raise "The following required attributes are missing: #{missing_attributes.join(',')}." if !missing_attributes.empty?
   end
 end

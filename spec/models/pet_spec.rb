@@ -1,4 +1,5 @@
 require 'spec_helper'
+
 describe Pet do
   before :each do
     @pet = FactoryGirl.create(:pet)
@@ -76,6 +77,30 @@ describe Pet do
     lambda{
       @pet.save!   
     }.should raise_error ActiveRecord::RecordInvalid, "Validation failed: Last visit can't be blank"
+  end
+  
+  it 'creates new pet from a hash' do
+    customer = FactoryGirl.create(:person, name: 'Thomass Closs')
+    last_visit = 7.days.ago
+    
+    pet = Pet.create_from_hash({
+      customer: customer,
+      name: 'Wing Chun',
+      pet_type: Pet::BIRD,
+      breed: 'Eagle',
+      age: 5,
+      weight: 12.8,
+      last_visit: last_visit
+    })
+    
+    pet.reload
+    pet.customer.should == customer
+    pet.name.should == 'Wing Chun'
+    pet.pet_type.to_sym.should == Pet::BIRD
+    pet.breed.should == 'Eagle'
+    pet.age.should == 5
+    pet.weight.should == 12.8
+    pet.last_visit.should == last_visit.to_date
   end
   
 end
