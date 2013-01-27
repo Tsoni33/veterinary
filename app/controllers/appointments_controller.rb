@@ -6,7 +6,7 @@ class AppointmentsController < ApplicationController
   def create
     pet = Pet.includes(:customer).where(id: params[:pet].to_i).first
 
-    appointment = Appointment.create_from_hash({
+    appointment = Appointment.create({
       date_of_visit: Date.parse(params[:date_of_visit]),
       pet: pet,
       customer: pet.customer,
