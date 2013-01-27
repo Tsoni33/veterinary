@@ -3,9 +3,13 @@ There is no client side validation. All validations happen on the server, mostly
 4 hours time is not enough for me to write both unit/functional tests and the full application.
 So I choose to write the fully-working application.
 
-There are 2 tests:  1 controller test and 1 model test using RSpec to show that I know how to write test :))
-Run the test from the command line:
-rspec spec
+There are 2 RSpec tests:  1 controller test and 1 model test using RSpec
+Run the test from the command line: rspec spec
+
+There is one cucumber test for pet.
+Run the test from the command line: rake cucumber
+
+They are just to show that I know how to write test :))
 
 
 PLEASE SEE THE URLS THAT IMPLEMENT THE STORIES BELOWS:
