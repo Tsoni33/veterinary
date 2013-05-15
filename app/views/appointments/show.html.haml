@@ -1,0 +1,13 @@
+%h1 Appointments for customer
+%table{ class: 'simple_table'}
+  %tr
+    %td{ class: 'simple_table' } Pet name
+    %td{ class: 'simple_table' } Date of next appointment
+    %td{ class: 'simple_table' } Reason for visit
+  
+  - @appointments.each do |appointment|
+    %tr
+      %td{ class: 'simple_table' } #{ appointment.pet.name }
+      %td{ class: 'simple_table' } #{ appointment.date_of_visit.strftime("%m/%d/%Y") }
+      %td{ class: 'simple_table' } #{ appointment.reason_for_visit }
+ 

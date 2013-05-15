@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 gem 'rails', '3.2.11'
 
@@ -44,3 +44,5 @@ group :test do
   gem 'database_cleaner'
   gem 'factory_girl_rails'
 end
+
+gem 'haml'

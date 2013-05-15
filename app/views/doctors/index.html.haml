@@ -1,0 +1,22 @@
+%h1 Doctor list
+
+%table{ class: 'simple_table' }
+  %tr
+    %td{ class: 'simple_table' } Name
+    %td{ class: 'simple_table' } Street
+    %td{ class: 'simple_table' } City
+    %td{ class: 'simple_table' } State    
+    %td{ class: 'simple_table' } Zip
+    %td{ class: 'simple_table' } Degree from school
+    %td{ class: 'simple_table' } Year in practice
+  
+  - @doctors.each do |doctor|
+    %tr
+      %td{ class: 'simple_table' } #{doctor.name}
+      %td{ class: 'simple_table' } #{doctor.street}
+      %td{ class: 'simple_table' } #{doctor.city}
+      %td{ class: 'simple_table' } #{doctor.state}
+      %td{ class: 'simple_table' } #{doctor.zip}
+      %td{ class: 'simple_table' } #{doctor.degree_from_school}
+      %td{ class: 'simple_table' } #{doctor.years_in_practice}
+
